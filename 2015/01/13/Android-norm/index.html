@@ -1,0 +1,499 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Android规范 | qxdw</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Devin Shine">
+    
+    <meta name="description" itemprop="description" content="Android开发简单规范说明">
+    
+    
+    <meta name="description" content="Android开发简单规范说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android规范">
+<meta property="og:url" content="http://yoursite.com/2015/01/13/Android-norm/">
+<meta property="og:site_name" content="qxdw">
+<meta property="og:description" content="Android开发简单规范说明">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android规范">
+<meta name="twitter:description" content="Android开发简单规范说明">
+
+
+    
+    <link rel="alternative" href="/atom.xml" title="qxdw" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="qxdw" title="qxdw"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="qxdw">qxdw</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/01/13/Android-norm/" title="Android规范" itemprop="url">Android规范</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Devin Shine" target="_blank" itemprop="author">Devin Shine</a>
+		
+  <p class="article-time">
+    <time datetime="2015-01-13T13:56:16.000Z" itemprop="datePublished"> Published Jan 13 2015</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-项目编码"><span class="toc-number">1.</span> <span class="toc-text">1.项目编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-文件、类、方法的注释模板"><span class="toc-number">2.</span> <span class="toc-text">2.文件、类、方法的注释模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-基础命名规则"><span class="toc-number">3.</span> <span class="toc-text">3.基础命名规则</span></a></li></ol>
+		
+		</div>
+		
+		<h3 id="1-项目编码">1.项目编码</h3>
+<p>统一使用UTF-8,包括类库</p>
+<h3 id="2-文件、类、方法的注释模板">2.文件、类、方法的注释模板</h3>
+<p>如图</p>
+<h3 id="3-基础命名规则">3.基础命名规则</h3>
+<p>基础规则遵循: 模块 <em> 逻辑(作用) </em> 状态(option) __ 名称(option)</p>
+<p><strong>1. 包名的命名规则</strong></p>
+<blockquote>
+<p>com.ebanswers.程序名：56iq厨房：com.ebanswers.netkitchen、微屏幕：com.ebanswers.wescreen</p>
+</blockquote>
+<ul>
+<li><strong>运行</strong><br>  Crash归类到com.ebanswers.netkitchen.crash下</li>
+<li><strong>实体</strong><br>  Entity类如果使用了Protobuf归类到：com..ebanswers.netkitchen.protobuf下，普通Entity归类到：com.ebanswers.netkitchen.data下</li>
+<li><strong>组件</strong><br>  Activity全部归类到：com.ebanswers.netkitchen.activity下<br>  BroadcastReceiver全部归类到：com.ebanswers.netkitchen.receiver下<br>  Service全部归类到：com.ebanswers.netkitchen.service下<br>  Contentprovide全部归类到：com.ebanswers.netkitchen.provide下<br>  Fragment全部归类到：com.ebanswers.netkitchen.fragment下<br>  Dialog全部归类到：com.ebanswers.netkitchen.dialog下<br>  Adapter全部归类到：com.ebanswers.netkitchen.adapter下</li>
+<li><strong>其他</strong><br>  网络连接的封装后归类到：com.ebanswers.netkitchen.net下<br>  配置归类到：com.ebanswers.netkitchen.config下<br>  Util 归类到：com.ebanswers.netkitchen.util下<br>  异步任务归类到：com.ebanswers.netkitchen.task下<br>  自定义View归类到：com.ebanswers.netkitchen.view下，具体再细分包</li>
+</ul>
+<p><strong>2. Java文件/方法的命名规则</strong></p>
+<blockquote>
+<p>模块/逻辑 + 组件名</p>
+</blockquote>
+<ul>
+<li><p><strong>文件命名</strong>：Activity、Service、BroadcastReceiver(receiver)、Contentprovide(provide)、Fragment、Adapter、Dialog、Popup、Wediget、AsyncTask等组件命名以组件常见名结尾：</p>
+<blockquote>
+<p>如：MainActivity、LoginActivity；WelFragment、MainFragment；WaitDialog、BluetoothDeviceAdapter、DownBoxAdapter、KitchenTask等</p>
+</blockquote>
+</li>
+<li><p><strong>方法命名</strong>：方法命名：表明意思即可</p>
+</li>
+</ul>
+<p><strong>3. Layout文件中id的命名规则</strong></p>
+<blockquote>
+<p>view缩写 <em> 模块名称 </em> view的逻辑名称</p>
+</blockquote>
+<p>view缩写详情如下</p>
+<ul>
+<li>Layout(LinearLayout、RelativeLayout 等)：layout</li>
+<li>View：v</li>
+<li>Button：btn</li>
+<li>TextView：tv</li>
+<li>ImageView：img</li>
+<li>ImageButton：img_btn</li>
+</ul>
+<blockquote>
+<p>比如定时器模块下面的一个主Layout，则命名如下：layout_countdown_root<br>比如定时器模块下面的一个开始按钮，则命名如下：btn_countdown_start<br>如果有两个start按钮，并且布局为左右各一个，则命名如下：btn_countdown_start_left；btn_countdown_start_right<br>如果控件是自定义控件，根据自定义控件名字来取缩写，比如MessageView：msg_v_family_item；SlidViewLayout：slid_v_main_root</p>
+</blockquote>
+<p><strong>4. Layout.xml的命名规则</strong></p>
+<ul>
+<li>模块名称_逻辑名称_dialog</li>
+<li>模块名称_逻辑名称_layout</li>
+<li>模块名称_逻辑名称_include</li>
+<li>模块名称_逻辑名称_popup</li>
+<li>模块名称_逻辑名称_activity</li>
+<li>模块名称_逻辑名称_fragment</li>
+<li>模块名称<em>逻辑名称 </em>(list、grid、spinner)_item</li>
+</ul>
+<p><strong>5. drawable中的图片命名规则</strong></p>
+<blockquote>
+<p>模块 <em> 逻辑(作用) </em> 状态(option)</p>
+</blockquote>
+<p>如下：countdown <em> bg </em> normal，countdown <em> bg </em> pressed</p>
+<p><strong>6. drawable.xml的命名规则</strong></p>
+<blockquote>
+<p>模块 <em> 逻辑(作用)(option) </em> 状态(optiion) _ d</p>
+</blockquote>
+<p>如下：<br>countdown_bg_normal_d.xml<br>countdown_bg_pressed_d.xml<br>countdown_bg_focused_d.xml<br>countdown_bg_selector_d.xml(里边可能是颜色、引用上边的俩XML)<br><strong><em>说明：其他特殊的shape、selector、image视情况而定。</em></strong></p>
+<p><strong>7. color中的xml及color的命名规则</strong></p>
+<ul>
+<li>模块 <em> 逻辑(作用)(option) </em> 状态(optiion) ,比如主界面TitleIndicator的字体在不同状态下在颜色：title_font_selector</li>
+<li>常用颜色：white、black、blue等直接命名</li>
+<li>theme颜色(如)： 奶白色：milk_white  QQ蓝：qq_blue  微信绿：wechat_green</li>
+<li>其他颜色：模块 <em> 逻辑(作用)(option) </em> 状态(optiion)<pre><code>  比如照相机界面背景色：camer<span class="built_in">a_layout</span>_bg
+</code></pre></li>
+</ul>
+<p><strong><em>注：color值上方用<!-- 颜色说明 -->注释</em></strong></p>
+<p><strong>8. string.xml中的id命名规则</strong> </p>
+<ul>
+<li>常用字符串：save、delete、back、ok、print 等直接命名</li>
+<li>错误提示字符串：e1000为底，1000递增 + 错误描述<pre><code>网络未连接：e1001_net_disconnected    用户未登录：e1002_user_not_logged
+e是<span class="built_in">error</span>的缩写，如果团队有多人，那么第一个人以e1001开头，第二人以e2000开头，依次…
+</code></pre></li>
+<li>其他字符串：直接描述即可<pre><code>我的账户：my_account    用户姓名：user_name    发邮件：send_email
+</code></pre></li>
+</ul>
+<p><strong>9.style.xml中的命名</strong></p>
+<p>命名规则：view <em> 描述 </em> theme/style<br>程序Theme：app_theme<br>复选框风格：checkbob_style<br>TextView左对齐：tv_left_style<br>昏暗的Ddialog，背景为透明：dialog_dim_transparent_style<br>全屏Activity：activity_fullscreen_style</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Android/">Android</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2015/01/13/Android-norm/" data-title="Android规范 | qxdw" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/01/14/hello-world/" title="Hello World">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Hello World</span>
+</a>
+</div>
+
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-项目编码"><span class="toc-number">1.</span> <span class="toc-text">1.项目编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-文件、类、方法的注释模板"><span class="toc-number">2.</span> <span class="toc-text">2.文件、类、方法的注释模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-基础命名规则"><span class="toc-number">3.</span> <span class="toc-text">3.基础命名规则</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+			<li><a href="/categories/Android/" title="Android">Android<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Android/" title="Android">Android<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Deivn Shine. <br/>
+			This is my blog</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Pacman">Jacman</a> © 2015 
+		
+		<a href="http://yoursite.com/about" target="_blank" title="Devin Shine">Devin Shine</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+  </body>
+</html>
